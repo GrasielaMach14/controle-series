@@ -6,11 +6,7 @@ Séries
 
 @section('conteudo')
 
-@if(!empty($mensagem))
-    <div class="alert alert-sucess">
-        {{ $mensagem }}
-    </div>
-@endif
+@include('mensagem', ['mensagem' => $mensagem])
 
 <a href={{ route('form_criar_serie')}} class="btn btn-dark mb-2">Adicionar</a>
 
@@ -29,7 +25,7 @@ Séries
             </div>
         </div>
 
-        <span class="d-flex">
+        <span class="d-flex align-items-center">
             <button class="btn btn-info btn-sm mr-1" onclick="toggleInput({{ $serie->id }})">
                 <i class="fas fa-edit"></i>
             </button>
@@ -41,7 +37,7 @@ Séries
             onsubmit="return confirm('Tem certeza que deseja remover {{ addslashes($serie->nome)}} ?')">
                 @csrf
                 @method('DELETE')
-                <button class="btn btn-danger btn-sm">
+                <button class="btn btn-danger btn-sm" style="margin-top: 16px">
                     <i class="fas fa-trash-alt"></i>
                 </button>    
             </form>
