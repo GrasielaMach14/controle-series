@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\SeriesFormRequest;
 
 class SeriesController extends Controller
-{
+{   
     public function index(Request $request)
     {
         $series = Serie::query()

@@ -11,6 +11,16 @@
 
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-1 d-flex justify-content-between">
+        <a class="navbar-brand" href="/series">Home</a>
+        @auth
+        <a href="/sair" style="color: #f4f6f9;">Sair</a>
+        @endauth
+        @guest
+        <a href="/entrar" style="color: #f4f6f9;">Entrar</a>
+        @endguest
+
+    </nav>
     <div class="container">
         <div class="jumbotron">
             <h1>@yield('cabecalho')</h1>  
